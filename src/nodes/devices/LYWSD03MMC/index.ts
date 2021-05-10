@@ -8,7 +8,7 @@ module.exports = (RED: NodeAPI) => {
     RED.nodes.createNode(this, config);
 
     this.name = config.name;
-    this.address = config.address.replace(":", "-").toLowerCase();
+    this.address = config.address.replace(/-/g, ":").toLowerCase();
 
     const node = this;
     const sensor: SensorData = {

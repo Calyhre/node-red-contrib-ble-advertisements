@@ -35,7 +35,7 @@ module.exports = (RED: NodeAPI) => {
           peripheral: {
             id: peripheral.id,
             uuid: peripheral.uuid,
-            address: peripheral.address,
+            address: peripheral.address.replace(/-/g, ":"),
             addressType: peripheral.addressType,
             connectable: peripheral.connectable,
             advertisement: peripheral.advertisement,
