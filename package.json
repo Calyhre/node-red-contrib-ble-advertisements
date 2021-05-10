@@ -1,0 +1,35 @@
+{
+  "name": "node-red-contrib-ble-advertisements",
+  "version": "0.0.1",
+  "description": "A node to catch broadcasted Bluetooth Low Energy advertisements",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "keywords": [
+    "node-red"
+  ],
+  "scripts": {
+    "prebuild": "rm -rf lib",
+    "build": "babel src --out-dir lib --copy-files --extensions '.ts,.js'"
+  },
+  "node-red": {
+    "nodes": {
+      "ble-advertisements": "lib/nodes/scanner/index.js",
+      "ble-advertisements-lywsd03mmc": "lib/nodes/devices/LYWSD03MMC/index.js",
+      "ble-advertisements-lywsdcgq": "lib/nodes/devices/LYWSDCGQ/index.js"
+    }
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.0",
+    "@babel/core": "^7.13.1",
+    "@babel/preset-env": "^7.13.5",
+    "@babel/preset-typescript": "^7.13.0",
+    "@babel/register": "^7.13.0",
+    "@types/node": "^14.14.31",
+    "@types/node-red": "^1.1.1",
+    "node-red": "^1.2.9",
+    "typescript": "^4.2.2"
+  },
+  "dependencies": {
+    "@abandonware/noble": "^1.9.2-11"
+  }
+}
